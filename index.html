@@ -1,0 +1,82 @@
+
+ funcionarios = {}
+
+def adicionar_funcionario():
+  """Adiciona um novo funcionário ao dicionário."""
+  id = input("Digite o ID do funcionário: ")
+  nome = input("Digite o nome do funcionário: ")
+  cargo = input("Digite o cargo do funcionário: ")
+  salario = float(input("Digite o salário do funcionário: "))
+
+  funcionarios[id] = {"nome": nome, "cargo": cargo, "salario": salario}
+  print("Funcionário adicionado com sucesso!")
+
+def atualizar_funcionario():
+  """Atualiza as informações de um funcionário existente."""
+  id = input("Digite o ID do funcionário a ser atualizado: ")
+  if id in funcionarios:
+    nome = input("Digite o novo nome (ou pressione Enter para manter o atual): ")
+    cargo = input("Digite o novo cargo (ou pressione Enter para manter o atual): ")
+    salario = input("Digite o novo salário (ou pressione Enter para manter o atual): ")
+
+    if nome:
+      funcionarios[id]["nome"] = nome
+    if cargo:
+      funcionarios[id]["cargo"] = cargo
+    if salario:
+      funcionarios[id]["salario"] = float(salario)
+
+    print("Informações do funcionário atualizadas com sucesso!")
+  else:
+    print("Funcionário não encontrado.")
+
+def remover_funcionario():
+  """Remove um funcionário do dicionário."""
+  id = input("Digite o ID do funcionário a ser removido: ")
+  if id in funcionarios:
+    del funcionarios[id]
+    print("Funcionário removido com sucesso!")
+  else:
+    print("Funcionário não encontrado.")
+
+def visualizar_funcionario():
+  """Exibe os detalhes de um funcionário específico."""
+  id = input("Digite o ID do funcionário: ")
+  if id in funcionarios:
+    funcionario = funcionarios[id]
+    print(f"ID: {id}")
+    print(f"Nome: {funcionario['nome']}")
+    print(f"Cargo: {funcionario['cargo']}")
+    print(f"Salário: {funcionario['salario']}")
+  else:
+    print("Funcionário não encontrado.")
+
+while True:
+  print("\nMenu:")
+  print("1. Adicionar funcionário")
+  print("2. Atualizar funcionário")
+  print("3. Remover funcionário")
+  print("4. Visualizar funcionário")
+  print("5. Sair")
+
+  opcao = input("Digite a opção desejada: ")
+
+  if opcao == '1':
+    adicionar_funcionario()
+  elif opcao == '2':
+    atualizar_funcionario()
+  elif opcao == '3':
+    remover_funcionario()
+  elif opcao == '4':
+    visualizar_funcionario()
+  elif opcao == '5':
+    break
+  else:
+    print("Opção inválida.")
+echo "# Trabalho-de-Johm" >> README.md 
+git init 
+git add README.md 
+git commit -m "first commit" 
+git branch -M main 
+git remote add origin https://github.com/Rafael735-alt/Trabalho-de-Johm.git
+ git push -u origem principal
